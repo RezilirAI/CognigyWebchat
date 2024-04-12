@@ -3,7 +3,6 @@ var callback = function (mutationsList) {
     if (mutation.type == 'childList') {
       let wcObject = [...mutation.addedNodes].filter((x) => x.id == 'webchatWindow')[0];
       if (wcObject) {
-        observer.disconnect();
         var wcState = "small"
 
         let b = document.createElement("button")
