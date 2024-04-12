@@ -1,8 +1,10 @@
 var callback = function (mutationsList) {
+  console.log(mutationsList);
   for (var mutation of mutationsList) {
     if (mutation.type == 'childList') {
       let wcObject = [...mutation.addedNodes].filter((x) => x.id == 'webchatWindow')[0];
       if (wcObject) {
+        console.log(wcObject);
         var wcState = "small"
 
         let b = document.createElement("button")
