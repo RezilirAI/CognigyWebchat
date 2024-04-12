@@ -16,10 +16,16 @@ var callback = function (mutationsList) {
 
         b.onclick = function () {
           if (wcState == "small") {
-            wcObject.style.width = "98%";
+            wcObject.style.bottom = "0px";
+            wcObject.style.right = "0px";
+            wcObject.style.height = "100%";
+            wcObject.style.width = "100%";
             b.innerText = "Shrink chat window"
             wcState = "big"
           } else if (wcState = "big") {
+            wcObject.style.bottom = '';
+            wcObject.style.right = '';
+            wcObject.style.height = '';
             wcObject.style.width = '';
             b.innerText = "Expand chat window"
             wcState = "small"
