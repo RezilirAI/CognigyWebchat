@@ -2,7 +2,8 @@ var callback = function (mutationsList) {
   console.log(mutationsList);
   for (var mutation of mutationsList) {
     if (mutation.type == 'childList') {
-      let wcObject = [...mutation.addedNodes].filter((x) => x.id == 'webchatWindow')[0];
+      //let wcObject = [...mutation.addedNodes].filter((x) => x.id == 'webchatWindow')[0];
+      let wcObject = document.querySelector('[data-cognigy-webchat-root]');
       if (wcObject) {
         console.log(wcObject);
         var wcState = "small"
@@ -22,7 +23,7 @@ var callback = function (mutationsList) {
             wcObject.style.width = "100%";
             b.innerText = "Shrink chat window"
             wcState = "big"
-          } else if (wcState = "big") {
+          } else if (wcState === "big") {
             wcObject.style.bottom = '';
             wcObject.style.right = '';
             wcObject.style.height = '';
