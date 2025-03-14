@@ -2,12 +2,13 @@ var callback = function (mutationsList) {
   console.log(mutationsList);
   for (var mutation of mutationsList) {
     if (mutation.type == 'childList') {
+      //let wcObject = [...mutation.addedNodes].filter((x) => x.id == 'webchatWindow')[0];
       let wcObject = document.querySelector('[data-cognigy-webchat-root]');
       if (wcObject) {
         console.log(wcObject);
-        var wcState = "small";
+        var wcState = "small"
 
-        let b = document.createElement("button");
+        let b = document.createElement("button")
         b.id = "webchatSizeToggle";
         b.innerText = "Expand chat window";
         b.style.border = 'none';
@@ -16,18 +17,19 @@ var callback = function (mutationsList) {
 
         b.onclick = function () {
           if (wcState == "small") {
-            let currentHeight = wcObject.offsetHeight;
-            let currentWidth = wcObject.offsetWidth;
-
-            wcObject.style.height = (currentHeight * 1.5) + "px"; // Increase height by 50%
-            wcObject.style.width = (currentWidth * 1.5) + "px";   // Increase width by 50%
-            b.innerText = "Shrink chat window";
-            wcState = "big";
+            wcObject.style.bottom = "0px";
+            wcObject.style.right = "0px";
+            wcObject.style.height = "50%";
+            wcObject.style.width = "50%";
+            b.innerText = "Shrink chat window"
+            wcState = "big"
           } else if (wcState === "big") {
-            wcObject.style.height = '';  // Reset height
-            wcObject.style.width = '';   // Reset width
-            b.innerText = "Expand chat window";
-            wcState = "small";
+            wcObject.style.bottom = '';
+            wcObject.style.right = '';
+            wcObject.style.height = '';
+            wcObject.style.width = '';
+            b.innerText = "Expand chat window"
+            wcState = "small"
           }
 
           return false;
@@ -36,7 +38,6 @@ var callback = function (mutationsList) {
     }
   }
 }
-
 var targetNode = document;
 
 var config = {
