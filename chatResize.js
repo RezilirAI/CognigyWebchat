@@ -19,8 +19,8 @@ var callback = function (mutationsList) {
           if (wcState == "small") {
             //wcObject.style.bottom = "0px";
             //wcObject.style.right = "0px";
-            wcObject.style.height = "75%";
-            wcObject.style.width = "75%";
+            wcObject.style.height = "100%";
+            wcObject.style.width = "50%";
             b.innerText = "Shrink chat window ⇲"
             wcState = "big"
           } else if (wcState = "big") {
