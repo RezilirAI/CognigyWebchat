@@ -17,8 +17,8 @@ var callback = function (mutationsList) {
 
         b.onclick = function () {
           if (wcState == "small") {
-            wcObject.style.bottom = "0px";
-            wcObject.style.right = "0px";
+            //wcObject.style.bottom = "0px";
+            //wcObject.style.right = "0px";
             wcObject.style.height = "75%";
             wcObject.style.width = "75%";
             b.innerText = "Shrink chat window ⇲"
